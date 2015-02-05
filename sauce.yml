@@ -1,0 +1,30 @@
+default:
+    extensions:
+      Behat\MinkExtension\Extension:
+        base_url: http://en.wikipedia.org
+        default_session: selenium2
+        javascript_session: selenium2
+        selenium2:
+          browser: 'chrome'
+          #browser: 'firefox'
+          # -- Comment out for running locally ----
+          wd_host: http://jc8390:21a13290-d368-47bb-bc7f-ccf0384d6e76@ondemand.saucelabs.com:80/wd/hub
+          capabilities:
+            version: ~
+            platform: 'Windows 7'
+          # ---------------------------------------
+    context:
+      parameters:
+        saucelabs:
+            # Set to false for running locally
+            enabled: true
+        #browser: 'firefox'
+        browser: 'chrome'
+    formatter:
+      parameters:
+        verbose: true
+        time: true
+        decorated: true
+        language: 'en'
+        output_styles:
+          comment: ['black', 'yellow', ['bold']]
